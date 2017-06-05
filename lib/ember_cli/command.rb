@@ -41,9 +41,17 @@ module EmberCli
 
       line.command(
         environment: EmberCli.env,
-        output_path: paths.dist,
+        output_path: dist,
         watcher: process_watcher,
       )
+    end
+
+    def dist
+      if %w(test development).include?(EmberCli.env)
+        paths.dist
+      else
+        paths.build_dist
+      end
     end
   end
 end
