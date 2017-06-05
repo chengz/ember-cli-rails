@@ -22,11 +22,7 @@ module EmberCli
     private
 
     def default_environment
-      if Rails.env.match(/test|development/)
-        Rails.env
-      else
-        "production"
-      end
+      Rails.env
     end
   end
 end

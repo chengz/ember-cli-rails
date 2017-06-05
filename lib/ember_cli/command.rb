@@ -40,18 +40,10 @@ module EmberCli
       ].compact.join(" "))
 
       line.command(
-        environment: build_environment,
+        environment: EmberCli.env,
         output_path: paths.dist,
         watcher: process_watcher,
       )
-    end
-
-    def build_environment
-      if EmberCli.env == "production"
-        "production"
-      else
-        "development"
-      end
     end
   end
 end
