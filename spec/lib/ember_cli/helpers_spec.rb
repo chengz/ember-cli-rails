@@ -33,12 +33,12 @@ describe EmberCli::Helpers do
     end
 
     context "when anything else" do
-      it "returns production" do
+      it "returns anything else" do
         stub_rails_env("staging")
 
         current_environment = EmberCli::Helpers.current_environment
 
-        expect(current_environment).to eq "production"
+        expect(current_environment).to eq "staging"
       end
     end
   end
